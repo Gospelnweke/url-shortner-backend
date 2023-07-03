@@ -1,8 +1,7 @@
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:3001',
-  'http://localhost:3002',
-  'http://localhost:2042',
+  'http://gospily.render.com',
+  
 ];
 
 module.exports = allowedOrigins;
