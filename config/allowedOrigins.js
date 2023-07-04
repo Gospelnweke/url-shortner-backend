@@ -1,6 +1,6 @@
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://gospily.onrender.com',
+  'https://gospily.onrender.com',
   
 ];
 
