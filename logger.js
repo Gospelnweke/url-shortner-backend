@@ -1,0 +1,30 @@
+require('dotenv').config();
+const { createLogger, format, transports } = require('winston');
+require('winston-mongodb');
+
+const logger = createLogger({
+  transports: [
+    new transports.Console(),
+    // new transports.File({
+    //     level: 'warn',
+    //     filename: 'logsWarnings.log'
+    // }),
+    // new transports.File({
+    //     level: 'error',
+    //     filename: 'logsErrors.log'
+    // })
+    new transports.MongoDB({
+      db: process.env.DATABASE_URI,
+      collection: 'logs',
+    }),
+  ],
+  format: format.combine(
+    format.timestamp(),
+    format.json(),
+
+    format.metadata(),
+    format.prettyPrint()
+  ),
+});
+
+module.exports = logger;
