@@ -10,7 +10,7 @@ const { transports, format } = require('winston');
 require('winston-mongodb');
 
 const app = express();
-const logger = require('./config/logger');
+const logger = require('./logger');
 
 const PORT = process.env.PORT || 3500;
 
